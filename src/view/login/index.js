@@ -1,7 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+import firebase from '../../config/firebase';
+import 'firebase/auth';
+
 import './login.css';
 
 function Login() {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+
+    function logar() {
+
+        firebase.auth().signInWithEmailAndPassword(email, password).then(result => {
+            alert('Deu certo');
+        }).catch(err => {
+            alert(err);
+        });
+    }
+
     return (
         <div className="login-content d-flex align-itens-center">
             <form className="form-signin mx-auto">
@@ -10,10 +27,22 @@ function Login() {
                     <h1 className="h3 mb-3 font-weight-normal text-white font-weight-bold">Login</h1>
                 </div>
 
-                <input type="email" id="inputEmail" class="form-control my-2" placeholder="Email" />
-                <input type="password" id="inputPassword" class="form-control my-2" placeholder="Senha" />
+                <input
+                    onChange={(e) => setEmail(e.target.value)}
+                    type="email"
+                    id="inputEmail"
+                    class="form-control my-2"
+                    placeholder="Email"
+                />
+                <input
+                    onChange={(e) => setPassword(e.target.value)}
+                    type="password"
+                    id="inputPassword"
+                    class="form-control my-2"
+                    placeholder="Senha"
+                />
 
-                <button class="btn btn-lg btn-block btn-login" type="submit">Entrar</button>
+                <button onClick={logar} class="btn btn-lg btn-block btn-login" type="button">Entrar</button>
 
                 <div className='msg-login text-white text-center my-4'>
                     <span><strong>Bem-Vindo!</strong> Você está conectado. &#128526;</span>
