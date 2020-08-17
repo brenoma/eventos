@@ -1,0 +1,15 @@
+.form-login {
+    max-width: 650px;
+
+}
+
+.btn-register {
+    background-color: #614EA6;
+    color: #FFF;
+    transition: .20s ease-in;
+}
+
+.btn-register:hover{
+    background-color: #5b0874;
+    color: #FFF;
+}

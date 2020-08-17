@@ -8,14 +8,15 @@ import './login.css';
 function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [messageType, setMessageType] = useState('');
 
 
     function logar() {
 
         firebase.auth().signInWithEmailAndPassword(email, password).then(result => {
-            alert('Deu certo');
+            setMessageType('sucess');
         }).catch(err => {
-            alert(err);
+            setMessageType('error');
         });
     }
 
@@ -45,9 +46,8 @@ function Login() {
                 <button onClick={logar} class="btn btn-lg btn-block btn-login" type="button">Entrar</button>
 
                 <div className='msg-login text-white text-center my-4'>
-                    <span><strong>Bem-Vindo!</strong> Você está conectado. &#128526;</span>
-                    <br></br>
-                    <span><strong>Ops!</strong> Usuário ou senha estão incorretos. &#128533;</span>
+                    {messageType === 'sucess' && <span><strong>Bem-Vindo!</strong> Você está conectado. &#128526;</span>}
+                    {messageType === 'error' && <span><strong>Ops!</strong> Usuário ou senha estão incorretos. &#128533;</span>}
                 </div>
 
                 <div className='opcoes-login mt-3 text-center'>
