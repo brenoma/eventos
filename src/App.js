@@ -7,6 +7,8 @@ import { Provider } from 'react-redux';
 import Login from './view/login/index';
 import Register from './view/register/index';
 import Home from './view/home';
+import Recovery from './view/recovery';
+import NewEvent from './view/newevent';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         <Route exact path='/' component={Home} />
         <Route exact path='/register' component={Register} />
         <Route exact path='/login' component={Login} />
+        <Route exact path='/recovery' component={Recovery} />
+        <Route exact path='/newevent' component={NewEvent} />
       </Router>
     </Provider>
   );

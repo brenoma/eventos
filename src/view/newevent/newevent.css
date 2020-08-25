@@ -1,0 +1,10 @@
+.btn-event {
+    background-color: #614EA6;
+    color: #fff;
+    transition: 0.2s ease-in;
+}
+
+.btn-event:hover {
+    background-color: #F21667;
+    color: #fff;
+}

@@ -1,0 +1,10 @@
+.btn-send {
+    background-color: #641EA6;
+    color: #FFF;
+    transition: .20s ease-in;
+}
+
+.btn-send:hover {
+    background-color: #F21667;
+    color: #FFF;
+}

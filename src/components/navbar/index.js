@@ -8,7 +8,7 @@ function Navbar() {
 
     return (
         <nav className="navbar navbar-expand-lg">
-            <span className="navbar-brand text-white font-weight-bold">Eventos</span>
+            <i class="far fa-smile-wink text-white fa-2x mr-2"></i>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <i className="fas fa-bars text-white"></i>
             </button>
@@ -20,9 +20,9 @@ function Navbar() {
                     {
                         useSelector(state => state.userLogged) > 0 ?
                             <>
-                                <li className="nav-item"><Link className="nav-link" to="">Publicar Evento</Link></li>
+                                <li className="nav-item"><Link className="nav-link" to="/newevent">Publicar Evento</Link></li>
                                 <li className="nav-item"><Link className="nav-link" to="">Meus Eventos</Link></li>
-                                <li className="nav-item"><Link className="nav-link" onClick={() => dispatch({type: 'LOG_OUT'})}>Sair</Link></li>
+                                <li className="nav-item"><Link className="nav-link" onClick={() => dispatch({ type: 'LOG_OUT' })}>Sair</Link></li>
                             </>
                             :
                             <>
