@@ -8,25 +8,42 @@ import Event from '../../components/event';
 
 import './home.css';
 
-function Home() {
+function Home({ match }) {
 
     const [events, setEvents] = useState([]);
     const [search, setSearch] = useState('');
     let listEvents = [];
+    const userMail = useSelector(state => state.userMail);
 
     useEffect(() => {
-        firebase.firestore().collection('events').get().then(async (result) => {
-            await result.docs.forEach(doc => {
-                if (doc.data().title.toUpperCase().indexOf(search.toUpperCase()) >= 0) {
-                    listEvents.push({
-                        id: doc.id,
-                        ...doc.data()
-                    });
-                }
-            })
 
-            setEvents(listEvents);
-        })
+        if (match.params.param) {
+            firebase.firestore().collection('events').where('user','==', userMail).get().then(async (result) => {
+                await result.docs.forEach(doc => {
+                    if (doc.data().title.toUpperCase().indexOf(search.toUpperCase()) >= 0) {
+                        listEvents.push({
+                            id: doc.id,
+                            ...doc.data()
+                        });
+                    }
+                })
+
+                setEvents(listEvents);
+            })
+        } else {
+            firebase.firestore().collection('events').get().then(async (result) => {
+                await result.docs.forEach(doc => {
+                    if (doc.data().title.toUpperCase().indexOf(search.toUpperCase()) >= 0) {
+                        listEvents.push({
+                            id: doc.id,
+                            ...doc.data()
+                        });
+                    }
+                })
+
+                setEvents(listEvents);
+            })
+        }
     })
 
     return (
