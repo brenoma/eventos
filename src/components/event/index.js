@@ -14,7 +14,7 @@ function Event({ id, img, title, description, views }) {
     }, [urlImg]);
 
     return (
-        <div className="col-md-3 col-sm-12">
+        <div className="col-md-3 col-sm-12 p-3">
             <img src={urlImg} className="card-img-top img-card" alt="Imagem do Evento" />
 
             <div className="card-body">

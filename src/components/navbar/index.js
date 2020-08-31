@@ -21,7 +21,7 @@ function Navbar() {
                         useSelector(state => state.userLogged) > 0 ?
                             <>
                                 <li className="nav-item"><Link className="nav-link" to="/newevent">Publicar Evento</Link></li>
-                                <li className="nav-item"><Link className="nav-link" to="">Meus Eventos</Link></li>
+                                <li className="nav-item"><Link className="nav-link" to="/events/mine">Meus Eventos</Link></li>
                                 <li className="nav-item"><Link className="nav-link" onClick={() => dispatch({ type: 'LOG_OUT' })}>Sair</Link></li>
                             </>
                             :

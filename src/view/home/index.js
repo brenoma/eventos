@@ -32,14 +32,13 @@ function Home() {
     return (
         <>
             <Navbar />
-            {/* <h1>{useSelector(state => state.userMail)}</h1>
-            <h1>{useSelector(state => state.userLogged)}</h1> */}
 
-            <div className="row p-5">
+            <div className="row p-2">
+                <h2 className="mx-auto p-5 font-weight-bold">Eventos Publicados</h2>
                 <input
                     onChange={(e) => setSearch(e.target.value)}
                     type="text"
-                    className="form-control text-center"
+                    className="form-control text-center mx-5"
                     placeholder="Pesquisar evento pelo título"
                 />
             </div>

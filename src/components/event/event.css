@@ -22,14 +22,14 @@
 
 .img-card {
     border-radius: 8px;
-    max-height: 250px;
+    height: 200px;
     min-width: 100%;
 }
 
 .card-body {
     margin-top: 5px;
     background-color: #614EA6;
-    border-radius: 8px;
+    border-radius: 35px;
     transition: 0.2s ease-in
     ;
 }
