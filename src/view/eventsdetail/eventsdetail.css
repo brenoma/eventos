@@ -24,3 +24,8 @@
 .btn-edit i:hover{
     color: #614EA6;
 }
+
+.title, .views {
+    color: #614EA6;
+    font-weight: bold;
+}

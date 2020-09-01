@@ -21,7 +21,7 @@ function App() {
         <Route exact path='/login' component={Login} />
         <Route exact path='/recovery' component={Recovery} />
         <Route exact path='/newevent' component={NewEvent} />
-        <Route exact path='/eventsdetail' component={EventsDetail} />
+        <Route path='/eventsdetail/:id' component={EventsDetail} />
       </Router>
     </Provider>
   );

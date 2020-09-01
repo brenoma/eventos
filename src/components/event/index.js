@@ -26,7 +26,7 @@ function Event({ id, img, title, description, views }) {
                 <div className="row footer-card d-flex align-items-center">
 
                     <div classname="col-6">
-                        <Link to={"/eventdetail/" + id} className="btn btn-sm btn-details">+ Detalhes</Link>
+                        <Link to={"/eventsdetail/" + id} className="btn btn-sm btn-details">+ Detalhes</Link>
                     </div>
 
                     <div className="col-6 text-right">
