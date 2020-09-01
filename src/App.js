@@ -9,6 +9,7 @@ import Register from './view/register/index';
 import Home from './view/home';
 import Recovery from './view/recovery';
 import NewEvent from './view/newevent';
+import EventsDetail from './view/eventsdetail';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route exact path='/login' component={Login} />
         <Route exact path='/recovery' component={Recovery} />
         <Route exact path='/newevent' component={NewEvent} />
+        <Route exact path='/eventsdetail' component={EventsDetail} />
       </Router>
     </Provider>
   );
